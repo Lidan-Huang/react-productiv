@@ -22,6 +22,7 @@ function TodoApp({initialTodos}) {
   const initialFormData = {title: "", description: "", priority: "",};
 
   const [todoList, setTodoList] = useState(initialTodos);
+  
   /** add a new todo to list */
   function create(newTodo) {
     const addTodo = {...newTodo, id: uuid()};
