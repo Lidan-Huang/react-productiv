@@ -13,6 +13,7 @@ import React, { useState } from "react";
 function TodoForm({ initialFormData, handleSave }) {
 
   const [formData, setFormData] = useState(initialFormData);
+  
 
   /** Update form input. */
   function handleChange(evt) {
@@ -26,7 +27,13 @@ function TodoForm({ initialFormData, handleSave }) {
   /** Call parent function and clear form. */
   function handleSubmit(evt) { 
     evt.preventDefault();
+    //TODO: turn priority into a number, currently a string
     handleSave(formData);
+    //formData.priority will be a string
+    //but will be a bug---if we have more priorities over 10 and try to compare
+    //str 10 to str 1, it won't work
+
+
     //when called in TodoApp, handleSave fn will either be create or update, 
     //depending on if the form is meant to be edit or add new
     setFormData(initialFormData);

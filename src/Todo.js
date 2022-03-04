@@ -23,3 +23,11 @@ function Todo({ todoObj }) {
 }
 
 export default Todo;
+
+//small tags rendering in browser as larger, bootstrap specs have changed
+//browser's small tag specs reflect desired size when bootstrap style is unchecked
+//user agent stylesheet = browser CSS file, applied first
+
+
+//TODO: you don't want to talk about the type of the thing (obj), change todoObj => todoData
+//TODO: then update wherever todoObj is used

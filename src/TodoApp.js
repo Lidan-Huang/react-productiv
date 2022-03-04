@@ -20,9 +20,12 @@ import TodoForm from "./TodoForm";
 
 function TodoApp({initialTodos}) {
   const initialFormData = {title: "", description: "", priority: "",};
+  //TODO: set default priority number
+  //give it a default number for priority (3), if you don't set it here, 
+  //when the browser renders the select menu, picks the first in the menu
 
   const [todoList, setTodoList] = useState(initialTodos);
-  
+
   /** add a new todo to list */
   function create(newTodo) {
     const addTodo = {...newTodo, id: uuid()};
